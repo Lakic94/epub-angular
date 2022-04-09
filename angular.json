@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "ebook": "apps/ebook",
+    "ebook-e2e": "apps/ebook-e2e"
+  }
+}
