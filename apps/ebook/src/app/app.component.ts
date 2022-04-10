@@ -12,6 +12,8 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.http.get('http://localhost:2020/').subscribe((res) => {
       console.log(res);
+      console.log('test');
+      
 
     })
 
