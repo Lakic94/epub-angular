@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/ebook",
         "index": "apps/ebook/src/index.html",
@@ -14,8 +16,13 @@
         "polyfills": "apps/ebook/src/polyfills.ts",
         "tsConfig": "apps/ebook/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/ebook/src/favicon.ico", "apps/ebook/src/assets"],
-        "styles": ["apps/ebook/src/styles.scss"],
+        "assets": [
+          "apps/ebook/src/favicon.ico",
+          "apps/ebook/src/assets"
+        ],
+        "styles": [
+          "apps/ebook/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -61,7 +68,10 @@
           "browserTarget": "ebook:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/ebook/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -80,7 +90,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/ebook"],
+      "outputs": [
+        "coverage/apps/ebook"
+      ],
       "options": {
         "jestConfig": "apps/ebook/jest.config.js",
         "passWithNoTests": true
