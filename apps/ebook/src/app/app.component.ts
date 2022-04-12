@@ -13,7 +13,20 @@ export class AppComponent {
     this.http.get('http://localhost:2020/').subscribe((res) => {
       console.log(res);
       console.log('test');
-      
+
+
+    })
+
+  }
+
+  change1(event: any) {
+    console.log(event.target.files[0]);
+
+    const formData: FormData = new FormData();
+    formData.append('files', event.target.files[0], event.target.files[0].name);
+
+    this.http.post('http://localhost:2020/epub', formData).subscribe((res) => {
+      console.log(res);
 
     })
 

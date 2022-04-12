@@ -3,6 +3,7 @@ import express from 'express'
 import AdmZip from 'adm-zip'
 import fs from 'fs'
 import path from 'path'
+import epubRoutes from './app/routes/epub'
 
 const app = express();
 const port = 2020;
@@ -38,14 +39,12 @@ fs.readFile(path.resolve(__dirname, './assets/bronze.epub'), function (err, data
 // .toString('utf-8'));
 
 app.use(cors({ origin: true }));
+app.use(express.json());
+app.use('/', epubRoutes);
 app.get("/", (req, res) => {
     console.log(path.dirname('/assets/bronze.epub'));
-    res.send(returnResponse());
+    res.send(`Example app listening at http://localhost:${port}`);
 
-});
-
-app.get("/css", (req, res) => {
-    res.send();
 });
 
 app.use(express.static("public"));
