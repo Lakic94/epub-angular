@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ebook';
+  book: any = null;
+  interval: any;
+  dynamicdata = 'This is dynamic data!';
 
   constructor(private http: HttpClient) {
     this.http.get('http://localhost:2020/').subscribe((res) => {
@@ -27,6 +30,7 @@ export class AppComponent {
 
     this.http.post('http://localhost:2020/epub', formData).subscribe((res) => {
       console.log(res);
+      this.book = res;
 
     })
 
